@@ -16,6 +16,18 @@ export class King extends Figure {
         if (!super.canMove(target)) {
             return false
         }
-        return true
+
+        if ((target.y === this.cell.y + 1 || target.y === this.cell.y - 1)
+            && target.x === this.cell.x && (this.cell.board.getCell(target.x, target.y).isEmpty() || this.cell.isEnemy(target))) {
+            return true
+        }
+
+        if ((target.x === this.cell.x + 1 || target.x === this.cell.x - 1)
+            && (target.y === this.cell.y || target.y === this.cell.y + 1 || target.y === this.cell.y - 1)
+            && (this.cell.board.getCell(target.x, target.y).isEmpty() || this.cell.isEnemy(target))) {
+            return true
+        }
+
+        return false
     }
 }
