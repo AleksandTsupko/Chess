@@ -15,7 +15,7 @@ const CellComponent: FC<CellProps> = ({ cell, selected, click }) => {
             style={{ background: cell.available && cell.figure ? "green" : "" }}
         >
             {cell.available && !cell.figure && <div className={"available"}></div>}
-            {cell.figure?.logo && <img src={cell.figure.logo} alt={cell.figure?.name}/>}
+            {cell.figure?.logo && <img src={cell.figure.logo} alt={cell.figure?.name} />}
         </div>
     )
 }

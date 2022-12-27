@@ -30,7 +30,7 @@ export class Figure {
     }
 
     canMove(target: Cell): boolean {
-        if(target.figure?.color === this.color) {
+        if (target.figure?.color === this.color) {
             return false
         }
 
@@ -41,6 +41,6 @@ export class Figure {
     }
 
     moveFigure(target: Cell) {
-        
+
     }
 }

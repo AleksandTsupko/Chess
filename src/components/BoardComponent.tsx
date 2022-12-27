@@ -26,7 +26,7 @@ const BoardComponent: FC<BoardProps> = ({ board, setBoard, currentPlayer, swapPl
         } else {
             if (cell.figure?.color === currentPlayer?.color) {
                 setSelectedCell(cell)
-            } 
+            }
         }
     }
 
@@ -41,14 +41,17 @@ const BoardComponent: FC<BoardProps> = ({ board, setBoard, currentPlayer, swapPl
     }
 
     return (
-        <div className="board" >
-            {board.cells.map((row, index) =>
-                <React.Fragment key={index}>
-                    {row.map(cell =>
-                        <CellComponent click={click} cell={cell} key={cell.id} selected={cell.x === selectedCell?.x && cell.y === selectedCell?.y} />
-                    )}
-                </React.Fragment>
-            )}
+        <div>
+            <h3>Текущий игрок {currentPlayer?.color}</h3>
+            <div className="board" >
+                {board.cells.map((row, index) =>
+                    <React.Fragment key={index}>
+                        {row.map(cell =>
+                            <CellComponent click={click} cell={cell} key={cell.id} selected={cell.x === selectedCell?.x && cell.y === selectedCell?.y} />
+                        )}
+                    </React.Fragment>
+                )}
+            </div>
         </div>
     )
 }
